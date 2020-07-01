@@ -1,25 +1,377 @@
-<!DOCTYPE html>
-<html>
+
+<!doctype html>
+<html lang="en" class="no-js">
   <head>
     <meta charset="utf-8">
-    <title>My test page</title>
-    <link href="styles/style.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <h1>Python is cool</h1>
-    <img src="images/Python-logo.png" alt="My test image">
-    <p>At Mozilla, we,re a global community of <strong>very</strong> grumpy.</p>
-    <ol> 
-        <li>technologists</li>
-        <li>thinkers</li>
-        <li>builders</li>
-    
-    </ol>
-    <p>working together ... </p>
 
-    <p>read the <a href="https://www.mozilla.org/zh-TW/about/manifesto/">Mozilla Manifesto</a>... pursuit of our mission.</p>
-    <button>Change User</button>
-    <script src="scripts/main.js"></script>
+
+
+
+
+
+
+
+
+<title>使用 GitHub 免費製作個人網站 - 為你自己學 Git | 高見龍</title>
+
+
+
+
+<meta name="keywords" content="Git, GitHub, Git課程, Git教學, Git書, GitHub教學, 版本控制, 為你自己學Git, 專案管理, GitHub Pages">
+
+
+
+
+
+<meta name="description" content="最白話、最深入淺出的 Git 教學，教您使用 Git 指令及圖形介面工具，建立正確的使用觀念，並使用 GitHub 與其它人一起共同協作">
+
+
+
+
+<meta property="og:locale" content="zh_TW" />
+<meta property="og:site_name" content="為你自己學 Git | 高見龍" />
+<meta property="og:title" content="使用 GitHub 免費製作個人網站 - 為你自己學 Git | 高見龍" />
+<meta property="og:type" content="book" />
+
+
+  <meta property="og:description" content="最白話、最深入淺出的 Git 教學，教您使用 Git 指令及圖形介面工具，建立正確的使用觀念，並使用 GitHub 與其它人一起共同協作" />
+
+
+
+  <link rel="canonical" href="https://gitbook.tw/chapters/github/using-github-pages.html" />
+  <meta property="og:url" content="https://gitbook.tw/chapters/github/using-github-pages.html" />
+
+
+
+  <meta name="twitter:site" content="@eddiekao">
+  <meta name="twitter:title" content="使用 GitHub 免費製作個人網站 - 為你自己學 Git | 高見龍">
+  <meta name="twitter:description" content="最白話、最深入淺出的 Git 教學，教您使用 Git 指令及圖形介面工具，建立正確的使用觀念，並使用 GitHub 與其它人一起共同協作">
+  <meta name="twitter:url" content="https://gitbook.tw/chapters/github/using-github-pages.html">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:image" content="https://gitbook.tw/assets/images/etc/og-image-gitbook.jpg">
+    
+  
+
+  
+
+
+
+  
+
+  
+    <meta property="fb:app_id" content="309552283138140">
+  
+
+
+
+  <meta property="og:image" content="https://gitbook.tw/assets/images/etc/og-image-gitbook.jpg">
+
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://gitbook.tw",
+      "logo": "https://gitbook.tw/assets/images/etc/og-image-gitbook.jpg"
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+<link href="https://gitbook.tw/feed.xml" type="application/atom+xml" rel="alternate" title="為你自己學 Git Feed">
+
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<link rel="stylesheet" href="https://gitbook.tw/assets/css/main.css">
+<meta http-equiv="cleartype" content="on">
+
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1810482214678172",
+    enable_page_level_ads: true
+  });
+</script>
+
+  </head>
+  <body class="layout--splash">
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="top-promotion">
+    讓您精通業界最常用 Git 版本控制！Git 教學課程熱烈報名中 <i class="icon-flash" aria-hidden="true"></i> <a href="https://ubin.io/ndKNFD" target="_blank">我有興趣</a> <a href="https://ubin.io/git-comment" target="_blank">學員評價</a>
+  </div>
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <button><div class="navicon"></div></button>
+        <ul class="visible-links">
+          <li class="masthead__menu-item masthead__menu-item--lg">
+            <a href="https://gitbook.tw/">為你自己學 Git</a>
+          </li>
+          
+            
+            
+            <li class="masthead__menu-item">
+              <a href="https://gitbook.tw/" class="">目錄</a>
+            </li>
+          
+            
+            
+            <li class="masthead__menu-item">
+              <a href="https://gitbook.tw/errata" class="">勘誤表</a>
+            </li>
+          
+            
+            
+            <li class="masthead__menu-item">
+              <a href="https://gitbook.tw/ebook" class="">電子書</a>
+            </li>
+          
+            
+            
+            <li class="masthead__menu-item">
+              <a href="https://gitbook.tw/videos" class="">單元劇</a>
+            </li>
+          
+            
+            
+            <li class="masthead__menu-item">
+              <a href="https://gitbook.tw/interview" class="">面試題</a>
+            </li>
+          
+            
+            
+            <li class="masthead__menu-item">
+              <a href="https://gitbook.tw/articles" class="">系列文章</a>
+            </li>
+          
+            
+            
+            <li class="masthead__menu-item">
+              <a href="https://gitbook.tw/playground" class="">練習場</a>
+            </li>
+          
+            
+            
+            <li class="masthead__menu-item">
+              <a href="https://gitbook.tw/about" class="">關於我</a>
+            </li>
+          
+        </ul>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+    
+
+<main id="main" role="main">
+  <article class="splash" itemscope itemtype="http://schema.org/Book">
+    <meta itemprop="headline" content="使用 GitHub 免費製作個人網站 - 為你自己學 Git | 高見龍">
+    
+    
+    
+
+    <section class="page__content" itemprop="text">
+      
+        <p><a href="/chapters/github/using-force-push.html" class="btn btn-danger">← 上一章：【狀況題】聽說 git push -f 這個指令很可怕，什麼情況可以用它呢？</a>
+<a href="/chapters/github/patch.html" class="btn btn-danger">下一章：【冷知識】一定要有 GitHub 才能得到別人更新的檔案嗎？ →</a></p>
+
+<hr />
+
+<h1 id="github-">使用 GitHub 免費製作個人網站</h1>
+
+<p>GitHub 除了提供免費的 Git Server 外，如果推上去的分支的名字剛好叫做 <code class="highlighter-rouge">gh-pages</code>，你可以用 GitHub 當做靜態檔案的伺服器，它比一般外面虛擬主機要便宜得多，也安全得多。不過也有一些限制：</p>
+
+<ol>
+  <li>僅呈現靜態頁面內容，如果是什麼 PHP 或是 ASP 的它不會理你。</li>
+  <li>不支援 <code class="highlighter-rouge">.htaccess</code> 之類的設定檔，所以無法設定使用者密碼。</li>
+  <li>僅能使用 Git 上傳，沒有什麼 FTP 之類的東西。</li>
+  <li>不像 Repository 有 Private 的設定，所有的 GitHub Pages 都是公開的，甚至放在 Private 專案裡，頁面也是公開的。</li>
+</ol>
+
+<p>整體上來說，GitHub Pages 的優點還是多於缺點，至少它穩定、安全又沒收你錢。接著就試試看如何把頁面放上去吧。</p>
+
+<h2 id="section">新增專案</h2>
+
+<p>首先在 GitHub 上開一個全新的專案：</p>
+
+<p><img src="/images/tw/github/using-github-pages/gh-pages1.png" alt="GitHub Pages" width="750px" /></p>
+
+<p>在專案名稱的地方，填寫「<code class="highlighter-rouge">username</code>.github.io」，這個 <code class="highlighter-rouge">username</code> 指的是自己的 GitHub 帳號，所以我這邊是填 <code class="highlighter-rouge">eddiekao.github.io</code>。</p>
+
+<p>接下來，我先找一個空的目錄，建立 <code class="highlighter-rouge">index.html</code>，內容如下：</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>你好，GitHub<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>覺得厲害<span class="nt">&lt;/h1&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+</div>
+
+<p>完成之後，就是 <code class="highlighter-rouge">git add</code> 跟 <code class="highlighter-rouge">git commit</code> 的基礎指令了（可參考「<a href="/chapters/using-git/add-to-git.html">把檔案交給 Git 控管</a>」章節）：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git add index.html
+
+$ git commit -m "add index"
+[master (root-commit) 80450b2] add index
+ 1 file changed, 10 insertions(+)
+ create mode 100644 index.html
+</code></pre>
+</div>
+
+<p>接下來就是一般的 Push 了，如果忘記怎麼操作可參閱「<a href="/chapters/github/push-to-github.html">Push 上傳到 GitHub</a>
+」章節。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git remote add origin https://github.com/eddiekao/eddiekao.github.io.git
+
+$ git push -u origin master
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 327 bytes | 327.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/eddiekao/eddiekao.github.io.git
+ * [new branch]      master -&gt; master
+Branch master set up to track remote branch master from origin.
+</code></pre>
+</div>
+
+<p>順利推上去之後，回到專案的頁面看看應該可以看到東西已經推上去了：</p>
+
+<p><img src="/images/tw/github/using-github-pages/gh-pages2.png" alt="GitHub Pages" width="850px" /></p>
+
+<p>這時候，輸入網址 <a href="https://eddiekao.github.io/">https://eddiekao.github.io/</a> 便可連上頁面：</p>
+
+<p><img src="/images/tw/github/using-github-pages/gh-pages3.png" alt="GitHub Pages" width="550px" /></p>
+
+<p>另外，坊間有其它像是 <a href="https://jekyllrb.com/">Jekyll</a> 或是 <a href="http://octopress.org/">Octopress</a> 之類的好用套件，可以使用 Markdown 語法編寫，並幫你轉成 HTML 格式或是產生整個 Blog，甚至有方便的指令可一行指令自動上傳到 GitHub Pages 上。</p>
+
+<p>本書所有內容(https://gitbook.tw/)以及我個人的 Blog(https://kaochenlong.com/)就是透過這些套件完成的，同時也是放在 GitHub Pages 上，又安全又穩定。詳情請見這些套件的官方網站介紹。</p>
+
+<ul>
+  <li>Jekyll: <a href="https://jekyllrb.com/">https://jekyllrb.com/</a></li>
+  <li>Octopress: <a href="http://octopress.org/">http://octopress.org/</a></li>
+</ul>
+
+<h2 id="section-1">客制化網址</h2>
+
+<p>覺得原來的網址不好記嗎？沒關係，GitHub Pages 有支援客制化網址，只要簡單兩個步驟就可完成：</p>
+
+<ol>
+  <li>在該專案的根目錄放一個檔名為 <code class="highlighter-rouge">CNAME</code> 的檔案，內容只要放你想要客制化的那個網址。</li>
+  <li>請幫你管理網域的人，幫你設定一組 CNAME 指到 <code class="highlighter-rouge">eddiekao.github.io.</code> 即可。（你的網域管理人應該知道什麼是 CNAME）</li>
+</ol>
+
+<p>參考網址：https://pages.github.com/</p>
+
+<hr />
+
+<p><a href="/chapters/github/using-force-push.html" class="btn btn-danger">← 上一章：【狀況題】聽說 git push -f 這個指令很可怕，什麼情況可以用它呢？</a>
+<a href="/chapters/github/patch.html" class="btn btn-danger">下一章：【冷知識】一定要有 GitHub 才能得到別人更新的檔案嗎？ →</a></p>
+
+      
+    </section>
+
+    
+      <div class="page__comments">
+  
+  
+    <h4 class="page__comments-title">Comments</h4>
+    <section class="fb-comments" data-href="https://gitbook.tw/chapters/github/using-github-pages.html" data-mobile="true" data-num-posts="5" width="100%" data-order-by="reverse_time" data-colorscheme="light"></section>
+  
+</div>
+
+    
+  </article>
+</main>
+
+    <div class="page__footer">
+      <footer>
+        
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+    
+      <li><a href="https://twitter.com/eddiekao"><i class="icon-twitter-squared" aria-hidden="true"></i> Twitter</a></li>
+    
+    
+      <li><a href="https://facebook.com/eddiekao"><i class="icon-facebook-squared" aria-hidden="true"></i> Facebook</a></li>
+    
+    
+      <li><a href="https://github.com/kaochenlong"><i class="icon-github-circled" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+      <li><a href="https://bitbucket.org/eddiekao"><i class="icon-bitbucket" aria-hidden="true"></i> Bitbucket</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2017 - 2020 高見龍 @ 五倍紅寶石</div>
+      </footer>
+    </div>
+    <script src="https://gitbook.tw/assets/js/main.min.js"></script>
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-337088-30', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&autoLogAppEvents=1&version=v3.1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
   </body>
-</html> 
+</html>
